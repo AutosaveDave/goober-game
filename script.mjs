@@ -18,7 +18,8 @@ export const getSpriteFromIndex = ( index ) => {
 };
 
 const mouseMoveEvent = document.addEventListener( 'mousemove', ( e ) => {
-    mouseCoords = [ e.clientX, e.clientY ];
+    const { left, top } = canvas.getBoundingClientRect();
+    mouseCoords = [ e.clientX - left, e.clientY - top ];
 } )
 
 stage.start();
