@@ -1,6 +1,6 @@
-import { bodySprites } from "./body/_index.mjs";
-import { footSprites } from "./foot/_index.mjs";
-import { handSprites } from "./hand/_index.mjs";
+import { bodySprites } from "./body_index.mjs";
+import { footSprites } from "./foot_index.mjs";
+import { handSprites } from "./hand_index.mjs";
 
 const getNameAndOrigin = ( cat, id ) => {
     switch( cat ) {
