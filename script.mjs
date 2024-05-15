@@ -17,7 +17,7 @@ export const getSpriteFromIndex = ( index ) => {
     return stage.sprites[ index ];
 };
 
-const mouseMoveEvent = canvas.addEventListener( 'mousemove', ( e ) => {
+const mouseMoveEvent = document.addEventListener( 'mousemove', ( e ) => {
     mouseCoords = [ e.clientX, e.clientY ];
 } )
 

@@ -12,6 +12,7 @@ export const newStageObj = ( canv, roomsArray ) => {
         canv: canv,
         ctx: canv.getContext("2d"),
         frame: false,
+        prevDeltaTime: [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ],
         previousTime: ( new Date() ).getTime() / 1000 - ( 1000 / 60 ),
         currentTime: ( new Date() ).getTime() / 1000,
 
@@ -55,8 +56,17 @@ export const newStageObj = ( canv, roomsArray ) => {
             const currTime = ( new Date() ).getTime() / 1000;
             this.previousTime = prevTime;
             this.currentTime = currTime;
+            const pdt = this.prevDeltaTime;
             const deltaTime = currTime - prevTime;
-            fpsEl.textContent = `${ Math.round( 100 * ( 1 / deltaTime ) ) / 100 } fps`;
+            let sum = deltaTime;
+            pdt.forEach( t => {
+                sum += t;
+            } );
+            const avgDt = sum / ( pdt.length + 1 );
+            const fps = Math.round( 100 * ( 1 / avgDt ) ) / 100;
+            fpsEl.textContent = `${ fps } fps`;
+            this.prevDeltaTime.shift();
+            this.prevDeltaTime.push( deltaTime );
             this.frame = window.requestAnimationFrame( () => { this.step( deltaTime ); } );
         },
 
