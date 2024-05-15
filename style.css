@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background-color: #212529; /* Charcoal background */
 }
   
@@ -11,6 +12,36 @@ body {
   color:#fff;
 }
 
+#canvas-container {
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#game-canvas {
+  width: 800px;
+  height: 600px;
+  background-color:navy;
+}
+
 #h-instructions {
   color:lemonchiffon;
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+#fps-display {
+  color: khaki;
+  position: absolute;
+  bottom: 0;
+  right: 24px;
+  width: 250px;
+  text-align: right;
 }
