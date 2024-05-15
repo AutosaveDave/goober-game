@@ -1,0 +1,12 @@
+body {
+    background-color: #212529; /* Charcoal background */
+  }
+  
+  .text-white { 
+    color: #fff; 
+    font-weight: bold; 
+  }
+
+#timer {
+    color:#fff;
+}
